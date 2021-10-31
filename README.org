@@ -15,7 +15,7 @@
   | Mail            | [[./mail.py]]              | Python   | Checks for the emails and sends notification |
   | Save Screenshot | [[./save-screenshot]]      | Bash     | Saves the screenshot from clip to file.      |
   | Timer           | [[./timer.py]]             | Python   | Timer                                        |
-  |                 |                        |          |                                              |
+  | Rename All      | [[./rename-all.py]]        | Python   | Renames all the files to snake case.         |
 
 * Autocomplete
   /Abandoned project/
@@ -55,3 +55,6 @@
   
 * Timer
   Simple timer to time events continuously. Like Lap time thing.
+
+* Rename all
+  It renames all the files into given path a snake case format. Ignores the hidden files.
