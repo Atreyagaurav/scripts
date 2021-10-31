@@ -1,0 +1,19 @@
+* Scripts files
+  This repo contains small scripts I have written for various tasks, some still work, some are under development and some I have abandoned.
+
+  The summary of scripts are in following table, you can refer to specific section for full details.
+  
+  | Script name  | File name       | language | Short description             |
+  | [[Autocomplete]] | autocomplete.py | python   | Autocomplete frequent phrases |
+  |              |                 |          |                               |
+
+* Autocomplete
+  /Abandoned project/
+
+  Basically saves a json of phrases you use frequently and then you can use them.
+
+  I'm planning to update this one using Dmenu, with two script options
+  - Add new phrase
+  - Insert phrase
+
+  I'll probably rewrite it on bash if I do it again.
