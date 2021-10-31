@@ -5,6 +5,7 @@
   
   | Script name  | File name       | language | Short description             |
   | [[Autocomplete]] | autocomplete.py | python   | Autocomplete frequent phrases |
+  | [[Battery Logs]] | battery.py      | Python   | Logs the battery percetage    |
   |              |                 |          |                               |
 
 * Autocomplete
@@ -17,3 +18,9 @@
   - Insert phrase
 
   I'll probably rewrite it on bash if I do it again.
+
+  
+* Battery Logs
+  Logs the % of battery you give to it in a file. There is plot_battery.{gnuplot,py} scripts to visualize the logged data.
+
+  
