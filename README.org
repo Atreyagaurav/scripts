@@ -3,17 +3,17 @@
 
   The summary of scripts are in following table, you can refer to specific section for full details.
   
-  | Script Group | File name              | language | Short description                            |
-  |--------------+------------------------+----------+----------------------------------------------|
-  | Autocomplete | [[./autocomplete.py]]      | python   | Autocomplete frequent phrases                |
-  | Battery Logs | [[./battery.py]]           | Python   | Logs the battery percentage                  |
-  |              | [[./plot_battery.py]]      | Python   | Plots the battery log                        |
-  |              | [[./plot_battery.gnuplot]] | Gnuplot  | Plots the battery log and shows trend        |
-  | Conky        | [[./conky.sh]]             | Bash     | Conky start scripts and prerequisites        |
-  |              | [[./daily_for_conky.sh]]   | Bash     | Scripts to run daily for conky.              |
-  | File Open    | [[./file-open.sh]]         | Bash     | Opens a file with a command.                 |
-  | Mail         | [[./mail.py]]              | Python   | Checks for the emails and sends notification |
-  |              |                        |          |                                              |
+  | Script Group    | File name              | language | Short description                            |
+  |-----------------+------------------------+----------+----------------------------------------------|
+  | Autocomplete    | [[./autocomplete.py]]      | python   | Autocomplete frequent phrases                |
+  | Battery Logs    | [[./battery.py]]           | Python   | Logs the battery percentage                  |
+  |                 | [[./plot_battery.py]]      | Python   | Plots the battery log                        |
+  |                 | [[./plot_battery.gnuplot]] | Gnuplot  | Plots the battery log and shows trend        |
+  | Conky           | [[./conky.sh]]             | Bash     | Conky start scripts and prerequisites        |
+  |                 | [[./daily_for_conky.sh]]   | Bash     | Scripts to run daily for conky.              |
+  | File Open       | [[./file-open.sh]]         | Bash     | Opens a file with a command.                 |
+  | Mail            | [[./mail.py]]              | Python   | Checks for the emails and sends notification |
+  | Save Screenshot | [[./save-screenshot]]      | Bash     | Saves the screenshot from clip to file.      |
 
 * Autocomplete
   /Abandoned project/
@@ -44,3 +44,10 @@
   
 * Mail
   It checks the email, sees if there is changes from the saved previous mails. And sends notification if there is a new one. It also prints the text in a colored format for conky.
+
+  
+* Save Screeshot
+  It's a simple script which saves the screenshot/image on the clipboard to a file. You can give a filename, or just let it save as ~screenshot.png~ which replaces the old one.
+
+  I use this line of command (~import png:- | xclip -selection c -t image/png~ binded to ~PrtSc~ key) to take screenshots and keep it in the clipboard. I can just paste the screenshot into places that takes image input, instead of saving it always, so when I do want to save it, I use this script.
+  
