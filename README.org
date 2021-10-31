@@ -14,6 +14,8 @@
   | File Open       | [[./file-open.sh]]         | Bash     | Opens a file with a command.                 |
   | Mail            | [[./mail.py]]              | Python   | Checks for the emails and sends notification |
   | Save Screenshot | [[./save-screenshot]]      | Bash     | Saves the screenshot from clip to file.      |
+  | Timer           | [[./timer.py]]             | Python   | Timer                                        |
+  |                 |                        |          |                                              |
 
 * Autocomplete
   /Abandoned project/
@@ -46,8 +48,10 @@
   It checks the email, sees if there is changes from the saved previous mails. And sends notification if there is a new one. It also prints the text in a colored format for conky.
 
   
-* Save Screeshot
+* Save Screenshot
   It's a simple script which saves the screenshot/image on the clipboard to a file. You can give a filename, or just let it save as ~screenshot.png~ which replaces the old one.
 
   I use this line of command (~import png:- | xclip -selection c -t image/png~ binded to ~PrtSc~ key) to take screenshots and keep it in the clipboard. I can just paste the screenshot into places that takes image input, instead of saving it always, so when I do want to save it, I use this script.
   
+* Timer
+  Simple timer to time events continuously. Like Lap time thing.
