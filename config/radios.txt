@@ -1,0 +1,4 @@
+Ujyaalo Radio Network 90.0 MHz :http://node-10.zeno.fm/h527zwd11uquv
+Radio Mero FM 93.3 MHz :http://streaming.hamropatro.com:8078/
+Radio Nepal 100.0 MHz :http://radionepal.gov.np:40100/stream
+Radio Audio 106.3 MHz :http://stream.zenolive.com/2w81t82wx3duv

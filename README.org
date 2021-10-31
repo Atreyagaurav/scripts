@@ -16,6 +16,8 @@
   | Save Screenshot | [[./save-screenshot]]      | Bash     | Saves the screenshot from clip to file.      |
   | Timer           | [[./timer.py]]             | Python   | Timer                                        |
   | Rename All      | [[./rename-all.py]]        | Python   | Renames all the files to snake case.         |
+  | Radio           | [[./radio.sh]]             | Bash     | Plays chosen radio from the given list.      |
+  |                 |                        |          |                                              |
 
 * Autocomplete
   /Abandoned project/
@@ -58,3 +60,7 @@
 
 * Rename all
   It renames all the files into given path a snake case format. Ignores the hidden files.
+
+  
+* Radio
+  Plays chosen radio from the list. 
