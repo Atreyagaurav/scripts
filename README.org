@@ -3,16 +3,17 @@
 
   The summary of scripts are in following table, you can refer to specific section for full details.
   
-  | Script Group | File name            | language | Short description                     |
-  |--------------+----------------------+----------+---------------------------------------|
-  | Autocomplete | [[./autocomplete.py]]    | python   | Autocomplete frequent phrases         |
-  | Battery Logs | [[battery.py]]           | Python   | Logs the battery percentage           |
-  |              | plot_battery.py      | Python   | Plots the battery log                 |
-  |              | [[plot_battery.gnuplot]] | Gnuplot  | Plots the battery log and shows trend |
-  | Conky        | [[conky.sh]]             | Bash     | Conky start scripts and prerequisites |
-  |              | [[daily_for_conky.sh]]   | Bash     | Scripts to run daily for conky.       |
-  | File Open    | [[file-open.sh]]         | Bash     | Opens a file with a command.          |
-  |              |                      |          |                                       |
+  | Script Group | File name              | language | Short description                            |
+  |--------------+------------------------+----------+----------------------------------------------|
+  | Autocomplete | [[./autocomplete.py]]      | python   | Autocomplete frequent phrases                |
+  | Battery Logs | [[./battery.py]]           | Python   | Logs the battery percentage                  |
+  |              | [[./plot_battery.py]]      | Python   | Plots the battery log                        |
+  |              | [[./plot_battery.gnuplot]] | Gnuplot  | Plots the battery log and shows trend        |
+  | Conky        | [[./conky.sh]]             | Bash     | Conky start scripts and prerequisites        |
+  |              | [[./daily_for_conky.sh]]   | Bash     | Scripts to run daily for conky.              |
+  | File Open    | [[./file-open.sh]]         | Bash     | Opens a file with a command.                 |
+  | Mail         | [[./mail.py]]              | Python   | Checks for the emails and sends notification |
+  |              |                        |          |                                              |
 
 * Autocomplete
   /Abandoned project/
@@ -38,3 +39,8 @@
   
 * File Open
   It uses dmenu to open a file, It's basically same as using dmenu to open a program, but the second option will be like a file browser so you can pass that filename as an argument to the program. 
+
+
+  
+* Mail
+  It checks the email, sees if there is changes from the saved previous mails. And sends notification if there is a new one. It also prints the text in a colored format for conky.
