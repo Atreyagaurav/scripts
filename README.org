@@ -24,6 +24,7 @@
   | Searchable PDFs | [[./make-pdf-searchable.sh]] | Bash     | Make image pdfs searchable.                  |
   | Capture Clip    | [[./capture_clipboard.py]]   | Python   | Capture the contents of the clipboard.       |
   | Brightness      | [[./brightness.sh]]          | Bash     | Control the brightness of screen.            |
+  | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
   |                 |                          |          |                                              |
 
 * Autocomplete
@@ -111,3 +112,38 @@
 
   You can use ~-inc val~ or ~-dec val~ or ~-set val~ to increase,
   decrease or set the brightness to/by certain percentage.
+
+  
+* Menu
+  This is just a dmenu based menu to run scripts, the scripts could be
+  ones from here or any other program with specific command/arguments.
+
+  For example, this is my ~menu.json~ file that is used by ~menu.sh~
+  script. I have to make it show the tooltips someway inn future.
+  #+begin_src json
+{
+  "bgcolor": "black",
+  "scripts": {
+    "c2-picture": {
+      "name": "c2 picture",
+      "script": "feh /home/gaurav/Pictures/cc.jpg",
+      "tooltip": "c2 background incase I need black blackground for transparent windows"
+    },
+    "radio-online": {
+      "name": "Online Radio",
+      "script": "/home/gaurav/scripts/radio.sh",
+      "tooltip": "Play different radios online, from the list on file."
+    },
+    "file-open": {
+      "name": "Open Files",
+      "script": "/home/gaurav/scripts/file-open.sh",
+      "tooltip": "open the program with command line arguments while opening."
+    },
+    "ddg-search": {
+      "name": "Search word in DuckDuckGo",
+      "script": "firefox --new-tab \"duckduckgo.com/$(xclip -o)\"",
+      "tooltip": "Searches the highlighed word in duckduckgo."
+    }
+  }
+}
+#+end_src
