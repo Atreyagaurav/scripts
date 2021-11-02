@@ -23,6 +23,7 @@
   | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
   | Searchable PDFs | [[./make-pdf-searchable.sh]] | Bash     | Make image pdfs searchable.                  |
   | Capture Clip    | [[./capture_clipboard.py]]   | Python   | Capture the contents of the clipboard.       |
+  | Brightness      | [[./brightness.sh]]          | Bash     | Control the brightness of screen.            |
   |                 |                          |          |                                              |
 
 * Autocomplete
@@ -102,4 +103,11 @@
   contents on the stdout.This is useful when you want to collect a
   bunch of things like the links to various youtube videos from search
   address, or copy a buuch of lines or paragraphs in to a same place.
+
   
+* Brightness
+  This is to simply change the brightness because the default driver
+  was not working for me for some reasons.
+
+  You can use ~-inc val~ or ~-dec val~ or ~-set val~ to increase,
+  decrease or set the brightness to/by certain percentage.
