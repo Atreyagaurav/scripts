@@ -20,6 +20,7 @@
   | Timer           | [[./timer.py]]             | Python   | Timer                                        |
   | Rename All      | [[./rename-all.py]]        | Python   | Renames all the files to snake case.         |
   | Radio           | [[./radio.sh]]             | Bash     | Plays chosen radio from the given list.      |
+  | Youtube         | [[./myyt.sh]]              | Bash     | Searches and plays videos from YouTube.      |
   |                 |                        |          |                                              |
 
 * Autocomplete
@@ -81,3 +82,9 @@
   
 * Radio
   Plays chosen radio from the list. 
+
+  
+* Youtube
+  This script can search and play videos from youtube, it uses your
+  google API and the youtube-dl program. I forgot where exactly I got
+  it from but it should be from somewhere in reddit.
