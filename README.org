@@ -22,6 +22,7 @@
   | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
   | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
   | Searchable PDFs | [[./make-pdf-searchable.sh]] | Bash     | Make image pdfs searchable.                  |
+  | Capture Clip    | [[./capture_clipboard.py]]   | Python   | Capture the contents of the clipboard.       |
   |                 |                          |          |                                              |
 
 * Autocomplete
@@ -94,3 +95,11 @@
   This script uses the tesseract OCR tool to convert a pdf into a
   searchable pdf. It converts the pdf to images and runs OCR on them
   then joins all the output from the OCR.
+
+  
+* Capture Clip
+  This script captures the clipboard continuously and prints the
+  contents on the stdout.This is useful when you want to collect a
+  bunch of things like the links to various youtube videos from search
+  address, or copy a buuch of lines or paragraphs in to a same place.
+  
