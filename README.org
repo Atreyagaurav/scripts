@@ -6,22 +6,23 @@
   The summary of scripts are in following table, you can refer to
   specific section for full details.
   
-  | Script Group    | File name              | language | Short description                            |
-  |-----------------+------------------------+----------+----------------------------------------------|
-  | Autocomplete    | [[./autocomplete.py]]      | python   | Autocomplete frequent phrases                |
-  | Battery Logs    | [[./battery.py]]           | Python   | Logs the battery percentage                  |
-  |                 | [[./plot_battery.py]]      | Python   | Plots the battery log                        |
-  |                 | [[./plot_battery.gnuplot]] | Gnuplot  | Plots the battery log and shows trend        |
-  | Conky           | [[./conky.sh]]             | Bash     | Conky start scripts and prerequisites        |
-  |                 | [[./daily_for_conky.sh]]   | Bash     | Scripts to run daily for conky.              |
-  | File Open       | [[./file-open.sh]]         | Bash     | Opens a file with a command.                 |
-  | Mail            | [[./mail.py]]              | Python   | Checks for the emails and sends notification |
-  | Save Screenshot | [[./save-screenshot]]      | Bash     | Saves the screenshot from clip to file.      |
-  | Timer           | [[./timer.py]]             | Python   | Timer                                        |
-  | Rename All      | [[./rename-all.py]]        | Python   | Renames all the files to snake case.         |
-  | Radio           | [[./radio.sh]]             | Bash     | Plays chosen radio from the given list.      |
-  | Youtube         | [[./myyt.sh]]              | Bash     | Searches and plays videos from YouTube.      |
-  |                 |                        |          |                                              |
+  | Script Group    | File name                | language | Short description                            |
+  |-----------------+--------------------------+----------+----------------------------------------------|
+  | Autocomplete    | [[./autocomplete.py]]        | python   | Autocomplete frequent phrases                |
+  | Battery Logs    | [[./battery.py]]             | Python   | Logs the battery percentage                  |
+  |                 | [[./plot_battery.py]]        | Python   | Plots the battery log                        |
+  |                 | [[./plot_battery.gnuplot]]   | Gnuplot  | Plots the battery log and shows trend        |
+  | Conky           | [[./conky.sh]]               | Bash     | Conky start scripts and prerequisites        |
+  |                 | [[./daily_for_conky.sh]]     | Bash     | Scripts to run daily for conky.              |
+  | File Open       | [[./file-open.sh]]           | Bash     | Opens a file with a command.                 |
+  | Mail            | [[./mail.py]]                | Python   | Checks for the emails and sends notification |
+  | Save Screenshot | [[./save-screenshot]]        | Bash     | Saves the screenshot from clip to file.      |
+  | Timer           | [[./timer.py]]               | Python   | Timer                                        |
+  | Rename All      | [[./rename-all.py]]          | Python   | Renames all the files to snake case.         |
+  | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
+  | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
+  | Searchable PDFs | [[./make-pdf-searchable.sh]] | Bash     | Make image pdfs searchable.                  |
+  |                 |                          |          |                                              |
 
 * Autocomplete
   /Abandoned project/
@@ -88,3 +89,8 @@
   This script can search and play videos from youtube, it uses your
   google API and the youtube-dl program. I forgot where exactly I got
   it from but it should be from somewhere in reddit.
+
+* Searchable PDFs
+  This script uses the tesseract OCR tool to convert a pdf into a
+  searchable pdf. It converts the pdf to images and runs OCR on them
+  then joins all the output from the OCR.
