@@ -25,6 +25,7 @@
   | Capture Clip    | [[./capture_clipboard.py]]   | Python   | Capture the contents of the clipboard.       |
   | Brightness      | [[./brightness.sh]]          | Bash     | Control the brightness of screen.            |
   | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
+  | Pdf Images      | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
   |                 |                          |          |                                              |
 
 * Autocomplete
@@ -147,3 +148,7 @@
   }
 }
 #+end_src
+
+* Get Pdf Images
+  It extracts the images from pdf files, it can recursively look
+  through the pdf files in the path.
