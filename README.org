@@ -1,7 +1,10 @@
 * Scripts files
-  This repo contains small scripts I have written for various tasks, some still work, some are under development and some I have abandoned.
+  This repo contains small scripts I have written for various tasks,
+  some still work, some are under development and some I have
+  abandoned.
 
-  The summary of scripts are in following table, you can refer to specific section for full details.
+  The summary of scripts are in following table, you can refer to
+  specific section for full details.
   
   | Script Group    | File name              | language | Short description                            |
   |-----------------+------------------------+----------+----------------------------------------------|
@@ -22,7 +25,8 @@
 * Autocomplete
   /Abandoned project/
 
-  Basically saves a json of phrases you use frequently and then you can use them.
+  Basically saves a json of phrases you use frequently and then you
+  can use them.
 
   I'm planning to update this one using Dmenu, with two script options
   - Add new phrase
@@ -32,34 +36,47 @@
 
   
 * Battery Logs
-  Logs the % of battery you give to it in a file. There is plot_battery.{gnuplot,py} scripts to visualize the logged data.
+  Logs the % of battery you give to it in a file. There is
+  plot_battery.{gnuplot,py} scripts to visualize the logged data.
 
 
 * Conky
-  Script to run the scripts I have on conky directory, as well as to run the necessary scripts before the conky one.
+  Script to run the scripts I have on conky directory, as well as to
+  run the necessary scripts before the conky one.
 
   The file ~daily_for_conky.sh~ is to put into the crontab.
 
   
 * File Open
-  It uses dmenu to open a file, It's basically same as using dmenu to open a program, but the second option will be like a file browser so you can pass that filename as an argument to the program. 
+  It uses dmenu to open a file, It's basically same as using dmenu to
+  open a program, but the second option will be like a file browser so
+  you can pass that filename as an argument to the program.
 
 
   
 * Mail
-  It checks the email, sees if there is changes from the saved previous mails. And sends notification if there is a new one. It also prints the text in a colored format for conky.
+  It checks the email, sees if there is changes from the saved
+  previous mails. And sends notification if there is a new one. It
+  also prints the text in a colored format for conky.
 
   
 * Save Screenshot
-  It's a simple script which saves the screenshot/image on the clipboard to a file. You can give a filename, or just let it save as ~screenshot.png~ which replaces the old one.
+  It's a simple script which saves the screenshot/image on the
+  clipboard to a file. You can give a filename, or just let it save as
+  ~screenshot.png~ which replaces the old one.
 
-  I use this line of command (~import png:- | xclip -selection c -t image/png~ binded to ~PrtSc~ key) to take screenshots and keep it in the clipboard. I can just paste the screenshot into places that takes image input, instead of saving it always, so when I do want to save it, I use this script.
+  I use this line of command (~import png:- | xclip -selection c -t
+  image/png~ binded to ~PrtSc~ key) to take screenshots and keep it in
+  the clipboard. I can just paste the screenshot into places that
+  takes image input, instead of saving it always, so when I do want to
+  save it, I use this script.
   
 * Timer
   Simple timer to time events continuously. Like Lap time thing.
 
 * Rename all
-  It renames all the files into given path a snake case format. Ignores the hidden files.
+  It renames all the files into given path a snake case
+  format. Ignores the hidden files.
 
   
 * Radio

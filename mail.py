@@ -8,7 +8,7 @@ import webbrowser
 
 DATA_DIR = os.path.expanduser('~/.data/')
 
-with open("~/scripts/.env") as r:
+with open(os.path.expanduser("~/scripts/.env")) as r:
     auth = json.load(r)
 
 if not os.path.exists(DATA_DIR):
