@@ -15,6 +15,7 @@
   | Conky           | [[./conky.sh]]               | Bash     | Conky start scripts and prerequisites        |
   |                 | [[./daily_for_conky.sh]]     | Bash     | Scripts to run daily for conky.              |
   | File Open       | [[./file-open.sh]]           | Bash     | Opens a file with a command.                 |
+  | Args Open       | [[./args-open.sh]]           | Bash     | Opens a command with given arguments.        |
   | Mail            | [[./mail.py]]                | Python   | Checks for the emails and sends notification |
   | Save Screenshot | [[./save-screenshot]]        | Bash     | Saves the screenshot from clip to file.      |
   | Timer           | [[./timer.py]]               | Python   | Timer                                        |
