@@ -27,7 +27,7 @@
   | Brightness      | [[./brightness.sh]]          | Bash     | Control the brightness of screen.            |
   | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
   | Pdf Images      | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
-  |                 |                          |          |                                              |
+  | speak.sh        | [[./speak.sh]]               | bash     | TTS whatever is typed after command.         |
 
 * Autocomplete
   /Abandoned project/
