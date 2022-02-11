@@ -1,0 +1,98 @@
+#!/usr/bin/env bash
+
+# Latex command template where %s is filename
+LATEX_COMMAND="pdflatex"
+LATEX_ARGS="-shell-escape --synctex=1 --output-directory $PWD"
+LATEX_PIPE=""
+
+flag_auto=''
+flag_silent=''
+flag_debug=''
+watch_files=''
+compile_count='1'
+compile_files=''
+recipe='pdflatex'
+
+print_usage() {
+  printf "Usage: ...\n"
+}
+
+TEMP=$(getopt -o 'asdt:w:r:c:h' --long 'auto,silent,debug,times:,watch:,recipe:,commands:,help' -n 'latex-compile' -- "$@")
+
+if [ $? -ne 0 ]; then
+    echo 'Erro in parsing Arguments...' >&2
+    print_usage
+    exit 1
+fi
+
+eval set -- "$TEMP"
+unset TEMP
+
+while true; do
+  case "$1" in
+      '-a'|'--auto')
+	  flag_auto='true'
+	  shift
+	  continue
+	  ;;
+      '-s'|'--silent')
+	  flag_silent='true'
+	  LATEX_ARGS="$LATEX_ARGS --interaction=batchmode"
+	  LATEX_PIPE=" 2>&1 > /dev/null"
+	  shift
+	  continue
+	  ;;
+      '-d'|'--debug')
+	  flag_debug='true'
+	  shift
+	  continue
+	  ;;
+      '-w'|'--watch')
+	  watch_files="$2:$watch_files"
+	  shift 2
+	  continue
+	  ;;
+      '-r'|'--recipe')
+	  recipe="$2"
+	  shift 2
+	  continue
+	  ;;
+      '-t'|'--times')
+	  compile_count="$2"
+	  shift 2
+	  continue
+	  ;;
+      '-h'|'--help')
+	  print_usage
+	  shift
+	  continue
+	  ;;
+      '--')
+	  shift
+	  break
+	  ;;
+      *) printf "Internal Error!\n"
+	 exit 1
+	 ;;
+  esac
+done
+    
+
+if [[ -n $flag_debug ]]; then
+printf "flag_auto = \t {%s}\n" $flag_auto
+printf "flag_silent = \t {%s}\n" $flag_silent
+printf "watch_files = \t {%s}\n" $watch_files
+printf "arguments = \n"
+for arg; do
+printf "\t %s\n" $arg
+done
+exit
+fi
+
+
+for arg; do
+    for i in $(seq $compile_count); do
+    printf "$LATEX_COMMAND $LATEX_ARGS $PWD/%s $LATEX_PIPE\n" "$arg"
+    $(printf "$LATEX_COMMAND $LATEX_ARGS $PWD/%s $LATEX_PIPE\n" "$arg")
+    done
+done

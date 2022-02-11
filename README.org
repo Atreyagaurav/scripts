@@ -8,26 +8,28 @@
   
   | Script Group    | File name                | language | Short description                            |
   |-----------------+--------------------------+----------+----------------------------------------------|
+  | Args Open       | [[./args-open.sh]]           | Bash     | Opens a command with given arguments.        |
   | Autocomplete    | [[./autocomplete.py]]        | python   | Autocomplete frequent phrases                |
   | Battery Logs    | [[./battery.py]]             | Python   | Logs the battery percentage                  |
-  |                 | [[./plot_battery.py]]        | Python   | Plots the battery log                        |
-  |                 | [[./plot_battery.gnuplot]]   | Gnuplot  | Plots the battery log and shows trend        |
-  | Conky           | [[./conky.sh]]               | Bash     | Conky start scripts and prerequisites        |
-  |                 | [[./daily_for_conky.sh]]     | Bash     | Scripts to run daily for conky.              |
-  | File Open       | [[./file-open.sh]]           | Bash     | Opens a file with a command.                 |
-  | Args Open       | [[./args-open.sh]]           | Bash     | Opens a command with given arguments.        |
-  | Mail            | [[./mail.py]]                | Python   | Checks for the emails and sends notification |
-  | Save Screenshot | [[./save-screenshot]]        | Bash     | Saves the screenshot from clip to file.      |
-  | Timer           | [[./timer.py]]               | Python   | Timer                                        |
-  | Rename All      | [[./rename-all.py]]          | Python   | Renames all the files to snake case.         |
-  | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
-  | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
-  | Searchable PDFs | [[./make-pdf-searchable.sh]] | Bash     | Make image pdfs searchable.                  |
-  | Capture Clip    | [[./capture_clipboard.py]]   | Python   | Capture the contents of the clipboard.       |
+  | Battery Logs    | [[./plot_battery.gnuplot]]   | Gnuplot  | Plots the battery log and shows trend        |
+  | Battery Logs    | [[./plot_battery.py]]        | Python   | Plots the battery log                        |
   | Brightness      | [[./brightness.sh]]          | Bash     | Control the brightness of screen.            |
+  | Capture Clip    | [[./capture_clipboard.py]]   | Python   | Capture the contents of the clipboard.       |
+  | Conky           | [[./conky.sh]]               | Bash     | Conky start scripts and prerequisites        |
+  | Conky           | [[./daily_for_conky.sh]]     | Bash     | Scripts to run daily for conky.              |
+  | File Open       | [[./file-open.sh]]           | Bash     | Opens a file with a command.                 |
+  | Mail            | [[./mail.py]]                | Python   | Checks for the emails and sends notification |
   | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
   | Pdf Images      | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
+  | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
+  | Rename All      | [[./rename-all.py]]          | Python   | Renames all the files to snake case.         |
+  | Save Screenshot | [[./save-screenshot]]        | Bash     | Saves the screenshot from clip to file.      |
+  | Searchable PDFs | [[./make-pdf-searchable.sh]] | Bash     | Make image pdfs searchable.                  |
+  | Timer           | [[./timer.py]]               | Python   | Timer                                        |
+  | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
+  | latex-compile   | [[./latex-compile]]          | bash     | Compile the latex file given.                |
   | speak.sh        | [[./speak.sh]]               | bash     | TTS whatever is typed after command.         |
+
 
 * Autocomplete
   /Abandoned project/
@@ -153,3 +155,10 @@
 * Get Pdf Images
   It extracts the images from pdf files, it can recursively look
   through the pdf files in the path.
+
+
+  
+* latex-compile
+  Compile latex files.
+
+  Few flags and arguments are added for ease of operation.
