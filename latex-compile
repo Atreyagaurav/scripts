@@ -6,18 +6,51 @@ LATEX_ARGS="-shell-escape --synctex=1 --output-directory $PWD"
 LATEX_PIPE=""
 
 flag_auto=''
-flag_silent=''
+flag_supress=''
 flag_debug=''
 watch_files=''
 compile_count='1'
 compile_files=''
-recipe='pdflatex'
+latex_recipe='pdflatex' 	# unused
+latex_extra_args=''		# unused
 
 print_usage() {
-  printf "Usage: ...\n"
+    printf "latex-compile: Helper tool to autocompile latex files.\n"
+    printf "\nUsage: latex-compile [-a|--auto] [-s|--supress]"
+    printf " [-d|--debug] [-w|--watch <files>]"
+    printf " [-r|--recipe <recipe>] [-c|--commands <args>]"
+    printf " [-h|--help] [<files>]\n"
+    
+    printf "\nOptions:\n"
+    printf "  [-a|--auto]\n"
+    printf "    Automatically compile latex each time file is modified.\n"
+    printf "  [-s|--supress]\n"
+    printf "    Supress as much output as possible.\n"
+    printf "  [-d|--debug]\n"
+    printf "    Debug mode; print variables and exit.\n"
+    printf "  [-w|--watch] <files>\n"
+    printf "    Add more files to watch list which trigger auto compile.\n"
+    printf "  [-r|--recipe] <recipe>\n"
+    printf "    Recipe to use for compilation\n"
+    printf "  [-c|--commands] <args>\n"
+    printf "    Arguments to pass to latex compile program.\n"
+    printf "  [-h|--help]\n"
+    printf "    Display this and exit.\n"
+    printf "  [<files>]\n"
+    printf "    Files to compile, defaults to all .tex in PWD.\n"
 }
 
-TEMP=$(getopt -o 'asdt:w:r:c:h' --long 'auto,silent,debug,times:,watch:,recipe:,commands:,help' -n 'latex-compile' -- "$@")
+
+compile_(){
+    for i in $(seq $compile_count); do
+	for arg in $compile_files; do
+	    printf "$LATEX_COMMAND $LATEX_ARGS $PWD/%s $LATEX_PIPE\n" "$arg"
+	    $(printf "$LATEX_COMMAND $LATEX_ARGS $PWD/%s $LATEX_PIPE\n" "$arg")
+	done
+    done
+}
+
+TEMP=$(getopt -o 'asdt:w:r:c:h' --long 'auto,supress,debug,times:,watch:,recipe:,commands:,help' -n 'latex-compile' -- "$@")
 
 if [ $? -ne 0 ]; then
     echo 'Erro in parsing Arguments...' >&2
@@ -35,8 +68,8 @@ while true; do
 	  shift
 	  continue
 	  ;;
-      '-s'|'--silent')
-	  flag_silent='true'
+      '-s'|'--supress')
+	  flag_supress='true'
 	  LATEX_ARGS="$LATEX_ARGS --interaction=batchmode"
 	  LATEX_PIPE=" 2>&1 > /dev/null"
 	  shift
@@ -48,7 +81,7 @@ while true; do
 	  continue
 	  ;;
       '-w'|'--watch')
-	  watch_files="$2:$watch_files"
+	  watch_files="$PWD/$2 $watch_files"
 	  shift 2
 	  continue
 	  ;;
@@ -65,7 +98,7 @@ while true; do
       '-h'|'--help')
 	  print_usage
 	  shift
-	  continue
+	  exit
 	  ;;
       '--')
 	  shift
@@ -76,23 +109,49 @@ while true; do
 	 ;;
   esac
 done
-    
 
-if [[ -n $flag_debug ]]; then
-printf "flag_auto = \t {%s}\n" $flag_auto
-printf "flag_silent = \t {%s}\n" $flag_silent
-printf "watch_files = \t {%s}\n" $watch_files
-printf "arguments = \n"
-for arg; do
-printf "\t %s\n" $arg
-done
-exit
+compile_files="$@"
+
+# if none given defaults to all the tex files in PWD
+if [[ -z $compile_files ]]; then
+    compile_files="*.tex"
 fi
 
+# outputs for debug mode
+if [[ -n $flag_debug ]]; then
+    echo "---------Settings---------"
+    printf "LaTeX Command = \t {%s}\n" "$LATEX_COMMAND"
+    printf "LaTeX Args = \t {%s}\n" "$LATEX_ARGS"
+    printf "LaTeX PIPE = \t {%s}\n" "$LATEX_PIPE"
+    echo "------User Arguments------"
+    printf "flag_auto = \t {%s}\n" "$flag_auto"
+    printf "flag_supress = \t {%s}\n" "$flag_supress"
+    printf "flag_debug = \t {%s}\n" "$watch_files"
+    printf "recipe = \t {%s}\n" "$latex_recipe"
+    printf "args = \t {%s}\n" "$latex_extra_args"
+    printf "compile_count = \t {%s}\n" "$compile_count"
+    echo "-----------Files----------"
+    printf "watch_files: \n\t {%s}\n" "$watch_files"
+    printf "compile_files: \n\t {%s}\n" "$compile_files"
+    exit
+fi
 
-for arg; do
-    for i in $(seq $compile_count); do
-    printf "$LATEX_COMMAND $LATEX_ARGS $PWD/%s $LATEX_PIPE\n" "$arg"
-    $(printf "$LATEX_COMMAND $LATEX_ARGS $PWD/%s $LATEX_PIPE\n" "$arg")
-    done
+# just compile and exit if it's not in auto mode
+if [[ -z $flag_auto ]]; then
+    compile_
+    exit
+fi
+
+for file in $compile_files; do
+    watch_files="$watch_files $PWD/$file"
+done
+
+
+printf "Waiting for changes in the watch files.\n$watch_files\n"
+# listen to events and compile when one of the files is modified
+inotifywait -q -m -e modify $watch_files |
+    while read -r filename event; do
+	printf "Changes detected in: %s\n" "$filename"
+	compile_
+	printf "Waiting for changes in the watch files.\n$watch_files\n"
 done

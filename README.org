@@ -162,3 +162,28 @@
   Compile latex files.
 
   Few flags and arguments are added for ease of operation.
+
+  Here is the help output for the script.
+  #+begin_example
+  Usage: latex-compile [-a|--auto] [-s|--supress] [-d|--debug] [-w|--watch <files>] [-r|--recipe <recipe>] [-c|--commands <args>] [-h|--help] [<files>]
+
+Options:
+  [-a|--auto]
+    Automatically compile latex each time file is modified.
+  [-s|--supress]
+    Supress as much output as possible.
+  [-d|--debug]
+    Debug mode; print variables and exit.
+  [-w|--watch] <files>
+    Add more files to watch list which trigger auto compile.
+  [-r|--recipe] <recipe>
+    Recipe to use for compilation
+  [-c|--commands] <args>
+    Arguments to pass to latex compile program.
+  [-h|--help]
+    Display this and exit.
+  [<files>]
+    Files to compile, defaults to all .tex in PWD.
+   #+end_example
+
+   Most helpful, and the reason I wrote this is the ~-a|--auto~ flag which means the latex will be recompiled whenever I change something and save the tex file. Along with auto refreshing in the viewer we can set a automatic compile and see setup.
