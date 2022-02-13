@@ -189,3 +189,22 @@ Options:
    #+end_example
 
    Most helpful, and the reason I wrote this is the ~-a|--auto~ flag which means the latex will be recompiled whenever I change something and save the tex file. Along with auto refreshing in the viewer we can set a automatic compile and see setup.
+
+   
+* volume scripts
+i3status config to get the output.
+  #+begin_src 
+  
+read_file volume{
+	path = "/tmp/volume"
+	format = "Spk: %content"
+	format_bad = "Spk: MUTE"
+}
+
+read_file mic{
+	path = "/tmp/mic"
+	format = "Mic: %content"
+	format_bad = "Mic: MUTE"
+}
+
+#+end_src
