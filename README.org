@@ -18,17 +18,19 @@
   | Conky           | [[./conky.sh]]               | Bash     | Conky start scripts and prerequisites        |
   | Conky           | [[./daily_for_conky.sh]]     | Bash     | Scripts to run daily for conky.              |
   | File Open       | [[./file-open.sh]]           | Bash     | Opens a file with a command.                 |
+  | Latex-compile   | [[./latex-compile]]          | bash     | Compile the latex file given.                |
   | Mail            | [[./mail.py]]                | Python   | Checks for the emails and sends notification |
   | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
+  | Microphone      | [[./microphone.sh]]          | bash     | Changes Mic volume and shows shows it        |
   | Pdf Images      | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
   | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
   | Rename All      | [[./rename-all.py]]          | Python   | Renames all the files to snake case.         |
   | Save Screenshot | [[./save-screenshot]]        | Bash     | Saves the screenshot from clip to file.      |
   | Searchable PDFs | [[./make-pdf-searchable.sh]] | Bash     | Make image pdfs searchable.                  |
+  | Speak           | [[./speak.sh]]               | bash     | TTS whatever is typed after command.         |
   | Timer           | [[./timer.py]]               | Python   | Timer                                        |
+  | Volume          | [[./volume.sh]]              | bash     | Changes Speaker volume and shows it          |
   | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
-  | latex-compile   | [[./latex-compile]]          | bash     | Compile the latex file given.                |
-  | speak.sh        | [[./speak.sh]]               | bash     | TTS whatever is typed after command.         |
 
 
 * Autocomplete
