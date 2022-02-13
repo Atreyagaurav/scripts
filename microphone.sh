@@ -32,7 +32,7 @@ pactl set-source-volume @DEFAULT_SOURCE@ "$VAL%";
 MUTE=`pactl get-source-mute @DEFAULT_SOURCE@`
 if [[ "$MUTE" == *"yes"* ]];
 then
-    notify-send Mic "MUTE ($VAL)" -h int:value:0 -h string:x-dunst-stack-tag:mic -i "$ICON_PATH/status/microphone-disabled-symbolic.symbolic.png" --urgency=LOW && echo "MUTE ($VAL)">/tmp/mic && exit
+    notify-send Mic "MUTE ($VAL)" -h int:value:0 -h string:x-dunst-stack-tag:mic -i "$ICON_PATH/status/microphone-disabled-symbolic.symbolic.png" --urgency=LOW && rm /tmp/mic && exit
 else
     notify-send Mic "$VAL" -h int:value:"$VAL" -h string:x-dunst-stack-tag:mic  -i "$ICON_PATH/status/microphone-sensitivity-high-symbolic.symbolic.png" --urgency=LOW && echo $VAL>/tmp/mic && exit
 fi

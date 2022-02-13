@@ -31,7 +31,13 @@ pactl set-sink-volume @DEFAULT_SINK@ "$VAL%";
 MUTE=`pactl get-sink-mute @DEFAULT_SINK@`
 if [[ "$MUTE" == *"yes"* ]];
 then
-    notify-send "Audio Volume" "MUTE ($VAL)" -h int:value:0 -h string:x-dunst-stack-tag:volume -i "$ICON_PATH/devices/audio-headphones.png" --urgency=LOW && echo "MUTE ($VAL)">/tmp/volume && exit
+    notify-send "Audio Volume" "MUTE ($VAL)" -h int:value:0 \
+		-h string:x-dunst-stack-tag:volume -i \
+		"$ICON_PATH/devices/audio-headphones.png" \
+		--urgency=LOW && rm /tmp/volume && exit
 else
-    notify-send "Audio Volume" "$VAL" -h int:value:"$VAL" -h string:x-dunst-stack-tag:volume -i "$ICON_PATH/devices/audio-headphones.png" --urgency=LOW && echo $VAL>/tmp/volume && exit
+    notify-send "Audio Volume" "$VAL" -h int:value:"$VAL" \
+		-h string:x-dunst-stack-tag:volume -i \
+		"$ICON_PATH/devices/audio-headphones.png" \
+		--urgency=LOW && echo $VAL>/tmp/volume && exit
 fi
