@@ -3,7 +3,7 @@ ICON_PATH="/usr/share/icons/Adwaita/32x32"
 VAL=`pactl get-sink-volume @DEFAULT_SINK@ | head -n1| awk -F/ '{print $2}'| sed 's/%//g;s/ //g'`
 
 case "$1" in
-    -echo) echo $VAL && exit
+    -echo) echo $VAL && echo $VAL>/tmp/volume && exit
 	   ;;
     -inc) VAL=$(($VAL+$2))
 	  ;;

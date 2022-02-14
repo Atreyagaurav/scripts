@@ -4,7 +4,6 @@ import feedparser as fp
 import notify2
 import os
 import datetime
-import webbrowser
 
 DATA_DIR = os.path.expanduser('~/.data/')
 
@@ -52,7 +51,7 @@ def format_notice(address, count, mails):
     return f'{count} new mails ({address})', ' * ' + mails_str
 
 
-def send_notification(title, contents, url = None):
+def send_notification(title, contents, url=None):
     notify2.init('Email Check')
     n = notify2.Notification(title, message=contents)
     n.set_urgency(notify2.URGENCY_CRITICAL)
