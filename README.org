@@ -234,3 +234,15 @@ exec --no-startup-id ~/scripts/volume.sh -echo
 # bindsym XF86MonBrightnessUp exec --no-startup-id 
 # bindsym XF86MonBrightnessDown exec --no-startup-id   
 #+end_src
+
+* notification
+  This script plays notification sounds for notifications form dunst.
+
+  put this in the dunstrc file. (NOTE: ~~/scripts/notification.sh~ is the path to this script.)
+#+begin_src 
+
+[notification_sound]
+   summary = "*"
+   script = ~/scripts/notification.sh
+
+#+end_src

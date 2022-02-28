@@ -7,7 +7,7 @@ AUDIO_PATH=/usr/share/sounds/freedesktop/stereo/
 case $1 in
     MPV) echo "MPV"
 	 ;;
-    "Email Check") mpv --no-config --quiet --really-quiet $AUDIO_PATH/phone-incoming-call.oga
+    "Email Check") mpv --volume=20 --no-config --quiet --really-quiet $AUDIO_PATH/phone-incoming-call.oga
 		   ;;
     *)
 	case $5 in
