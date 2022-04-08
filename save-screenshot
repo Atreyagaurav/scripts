@@ -2,7 +2,11 @@
 if (($# < 1)); then
     filename="screenshot.png"
 else
-    filename="$1.png"
+    if [ -f "$1" ]; then
+	filename="$1"
+    else
+	filename="$1.png"
+    fi
 fi
 xclip -selection clipboard -type image/png -o > "$filename"
 printf "Saved screenshot in clipboard to: %s\n" $filename
