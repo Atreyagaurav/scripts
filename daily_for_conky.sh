@@ -1,7 +1,7 @@
 
 #!/usr/bin/env bash
-~/kool/programming/c/birthdays/birthdays_final -u7 > /tmp/bdays.txt
-~/kool/programming/c/birthdays/birthdays_final -d > /tmp/today.txt
-~/kool/programming/c/calendar-desktop/calender-desktop > /tmp/calendar.txt 
+~/github/birthdays-reminder/birthdays -u7 > /tmp/bdays.txt
+~/github/birthdays-reminder/birthdays -d > /tmp/today.txt
+~/github/calendar-desktop/calender-desktop > /tmp/calendar.txt 
 # python ~/scripts/corona/summary.py
 # ~/scripts/plot_corona.sh

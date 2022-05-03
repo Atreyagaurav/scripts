@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-echo "$@" | festival --tts
+flite_cmu_us_slt -t "$@"
