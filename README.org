@@ -9,7 +9,7 @@
   | Script Group    | File name                | language | Short description                            |
   |-----------------+--------------------------+----------+----------------------------------------------|
   | Args Open       | [[./args-open.sh]]           | Bash     | Opens a command with given arguments.        |
-  | Autocomplete    | [[./autocomplete.py]]        | python   | Autocomplete frequent phrases                |
+  | Autocomplete*   | [[./autocomplete.py]]        | python   | Autocomplete frequent phrases                |
   | Battery Logs    | [[./battery.py]]             | Python   | Logs the battery percentage                  |
   | Battery Logs    | [[./plot_battery.gnuplot]]   | Gnuplot  | Plots the battery log and shows trend        |
   | Battery Logs    | [[./plot_battery.py]]        | Python   | Plots the battery log                        |
@@ -23,7 +23,7 @@
   | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
   | Microphone      | [[./microphone.sh]]          | bash     | Changes Mic volume and shows shows it        |
   | Notification    | [[/.notification.sh]]        | bash     | Notification rules for dunst                 |
-  | Pdf Images      | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
+  | Pdf Images*     | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
   | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
   | Rename All      | [[./rename-all.py]]          | Python   | Renames all the files to snake case.         |
   | Save Screenshot | [[./save-screenshot]]        | Bash     | Saves the screenshot from clip to file.      |
@@ -33,6 +33,7 @@
   | Volume          | [[./volume.sh]]              | bash     | Changes Speaker volume and shows it          |
   | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
 
+  Note: * denotes the script is either incomplete or there is better alternative.
 
 * Autocomplete
   /Abandoned project/
@@ -155,9 +156,11 @@
 }
 #+end_src
 
-* Get Pdf Images
+* Get Pdf Images [Don't use it]
   It extracts the images from pdf files, it can recursively look
   through the pdf files in the path.
+
+  Recently Found out ~poppler-tools~ has ~pdfimages~ which does it for us, so no need to use it.
 
 
   
