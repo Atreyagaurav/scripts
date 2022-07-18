@@ -1,6 +1,7 @@
 #!/bin/bash
 ICON_PATH="/usr/share/icons/Adwaita/32x32"
 VAL=`pactl get-sink-volume @DEFAULT_SINK@ | head -n1| awk -F/ '{print $2}'| sed 's/%//g;s/ //g'`
+MAX_VOL=125
 
 case "$1" in
     -echo) echo $VAL && echo $VAL>/tmp/volume && exit
@@ -21,9 +22,9 @@ then
     VAL=0
 fi
 
-if [ $VAL -gt 100 ]
+if [ $VAL -gt $MAX_VOL ]
 then
-    VAL=100
+    VAL=$MAX_VOL
 fi
 
 pactl set-sink-volume @DEFAULT_SINK@ "$VAL%";
