@@ -1,13 +1,21 @@
 #!/usr/bin/env python
 import pyperclip as pc
 import time
+import sys
 
-clip = pc.paste()
-# use primary selection to avoid even having to use Ctrl+C
+primary = False
+if '-p' in sys.argv:
+    primary = True
+
+_, paste = pc.determine_clipboard()
+
+clip = paste(primary=primary)
+
 try:
     while True:
-        if clip != pc.paste():
-            clip = pc.paste()
+        new_clip = paste(primary=primary)
+        if clip != new_clip:
+            clip = new_clip
             print(clip)
         time.sleep(0.1)
 except KeyboardInterrupt:

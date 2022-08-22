@@ -9,6 +9,9 @@ DATA_DIR = os.path.expanduser('~/.data/')
 
 with open(os.path.expanduser("~/scripts/.env")) as r:
     auth = json.load(r)
+    if 'outgoing' in  auth:
+            auth.pop('outgoing')
+
 
 if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR, exist_ok=True)
