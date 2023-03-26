@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+num_files="$1"
+destination="$2"
+if [ -z "$num_files" ];
+then
+    num_files="1"
+fi
+
+if [ -z "$destination" ];
+then
+    destination="."
+fi
+
+ls -1 ~/Downloads/ -t | head -n $num_files | parallel mv '~/Downloads/{}' $destination

@@ -22,6 +22,7 @@
   | Mail            | [[./mail.py]]                | Python   | Checks for the emails and sends notification |
   | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
   | Microphone      | [[./microphone.sh]]          | bash     | Changes Mic volume and shows shows it        |
+  | Move Download   | [[./move-download]]          | bash     | Move recently downloaded files to PWD        |
   | Notification    | [[/.notification.sh]]        | bash     | Notification rules for dunst                 |
   | Pdf Images*     | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
   | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
