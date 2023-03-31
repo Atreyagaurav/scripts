@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
 # Latex command template where %s is filename
-LATEX_COMMAND="pdflatex"
-LATEX_ARGS="-shell-escape --synctex=1 --output-directory $PWD"
+LATEX_COMMAND="latexmk"
+LATEX_ARGS="-shell-escape --synctex=1 --pdf"
 LATEX_PIPE=""
 
 flag_auto=''
