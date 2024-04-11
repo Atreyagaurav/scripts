@@ -23,7 +23,8 @@
   | Menu            | [[./menu.sh]]                | Bash     | dmenu based menu for scripts                 |
   | Microphone      | [[./microphone.sh]]          | bash     | Changes Mic volume and shows shows it        |
   | Move Download   | [[./move-download]]          | bash     | Move recently downloaded files to PWD        |
-  | Notification    | [[/.notification.sh]]        | bash     | Notification rules for dunst                 |
+  | Notification    | [[./notification.sh]]        | bash     | Notification rules for dunst                 |
+  | OCR screen      | [[./ocr-screen.sh]]          | bash     | Run tesserace OCR on selected rectangle      |
   | Pdf Images*     | [[./pdf_extract_images.py]]  | Python   | Extract images from pdfs.                    |
   | Radio           | [[./radio.sh]]               | Bash     | Plays chosen radio from the given list.      |
   | Rename All      | [[./rename-all.py]]          | Python   | Renames all the files to snake case.         |
