@@ -33,6 +33,7 @@
   | Speak           | [[./speak.sh]]               | bash     | TTS whatever is typed after command.         |
   | Timer           | [[./timer.py]]               | Python   | Timer                                        |
   | Volume          | [[./volume.sh]]              | bash     | Changes Speaker volume and shows it          |
+  | Word Count      | [[./word-count.sh]]          | bash     | Count the number of lines/words/chars        |
   | Youtube         | [[./myyt.sh]]                | Bash     | Searches and plays videos from YouTube.      |
 
   Note: * denotes the script is either incomplete or there is better alternative.
