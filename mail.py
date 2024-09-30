@@ -17,13 +17,21 @@ if not os.path.exists(DATA_DIR):
     os.makedirs(DATA_DIR, exist_ok=True)
 
 EMAIL_JSON = os.path.join(DATA_DIR, 'email.json')
+BLACKLIST_EMAILS_JSON = os.path.join(DATA_DIR, 'email-blacklist.json')
 EMAIL_TXT = os.path.join(DATA_DIR, 'email.txt')
 
-if os.path.exists(EMAIL_JSON):
-    with open(EMAIL_JSON, 'r') as r:
-        emails_dict = json.load(r)
-else:
-    emails_dict = dict()
+
+def read_json(JSON):
+    if os.path.exists(JSON):
+        with open(JSON, 'r') as r:
+            _dict = json.load(r)
+    else:
+        _dict = dict()
+    return _dict
+
+
+emails_dict = read_json(EMAIL_JSON)
+blacklist = set(read_json(BLACKLIST_EMAILS_JSON))
 
 COLORS = {
     'reset': '$color',
@@ -71,23 +79,31 @@ txt = '${color e43526}EMAILS: (' + dt + ')${color}\n'
 for my_mail, my_pass in auth.items():
     new_emails_dict[my_mail] = dict()
 
-    url = f'https://{my_mail}:{my_pass}@mail.google.com/mail/feed/atom/^smartlabel_personal'
+    # url = f'https://{my_mail}:{my_pass}@mail.google.com/mail/feed/atom/^smartlabel_personal'
+    url = f'https://{my_mail}:{my_pass}@mail.google.com/mail/feed/atom/' + '^sq_ig_i_personal'
     try:
         mail = fp.parse(requests.get(url).text)
     except requests.HTTPError:
         raise SystemExit('No internet')
 
     new_emails_dict[my_mail]['count'] = mail.feed.fullcount
-    new_emails_dict[my_mail]['mails'] = [m['id'] for m in mail.entries]
+    new_emails_dict[my_mail]['mails'] = [m['id'] for m in mail.entries
+                                         if len({a.email for a in m.authors}.intersection(blacklist)) == 0]
     mails = []
-    for i in range(min(NO_OF_MAILS, len(mail.entries))):
-        title = mail.entries[i].title
-        sender = ";".join(a.name for a in mail.entries[i].authors)
+    i = 0
+    for e in mail.entries:
+        if i >= NO_OF_MAILS:
+            break
+        elif e.id not in new_emails_dict[my_mail]['mails']:
+            continue
+        title = e.title
+        sender = ";".join(a.name for a in e.authors)
         mails.append((shorten(title), shorten(sender)))
+        i += 1
     history = emails_dict.get(my_mail)
-    if history is None or history[
-            'count'] < mail.feed.fullcount or mail.entries[0][
-                'id'] not in history['mails']:
+    if history is None or (history['count'] < mail.feed.fullcount and
+                          new_emails_dict[my_mail]['mails'][0] not in
+                          history['mails']):
         t, c = format_notice(my_mail, mail.feed.fullcount, mails)
         send_notification(t, c, url=mail.feed.link)
 

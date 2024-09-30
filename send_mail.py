@@ -32,5 +32,9 @@ def send_msg(subject, content):
 
 
 if __name__ == '__main__':
-    send_msg(sys.argv[1],
-             " ".join(sys.argv[2:]))
+    try:
+        send_msg(sys.argv[1],
+                 " ".join(sys.argv[2:]))
+    except IndexError:
+        print(f"Usage: {sys.argv[0]} 'Email Subject' Email Contents")
+        print("\nThe subject needs to be quoted, the email does not.")
